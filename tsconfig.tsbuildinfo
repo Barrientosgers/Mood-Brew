@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/types.ts","./src/vite-env.d.ts","./src/components/favoriteslist.tsx","./src/components/moodform.tsx","./src/components/recommendationcard.tsx","./src/data/drinks.ts","./src/utils/recommendationengine.ts"],"version":"5.9.3"}
