@@ -77,6 +77,27 @@ function scoreDrink(drink: Drink, form: MoodFormAnswers) {
     matchedTags.push('temperature');
   }
 
+  if (form.weatherVibe !== 'any') {
+    const weatherBoosts: Record<string, string[]> = {
+      sunny: ['iced', 'fruity', 'bright', 'refreshing'],
+      rainy: ['hot', 'cozy', 'warm', 'comfort'],
+      cloudy: ['soft', 'balanced', 'gentle', 'smooth'],
+      cold: ['hot', 'spicy', 'warming', 'cocoa'],
+      warm: ['iced', 'light', 'fresh', 'cool'],
+    };
+
+    const matchedWeather = weatherBoosts[form.weatherVibe]?.some((keyword) =>
+      [...drink.flavors, ...drink.moodTags, drink.description, drink.customizationIdea, drink.temperature].some((entry) =>
+        normalize(entry).includes(keyword),
+      ),
+    );
+
+    if (matchedWeather) {
+      score += 14;
+      matchedTags.push('weather');
+    }
+  }
+
   if (drink.category === 'coffee' && form.caffeinePreference !== 'no') {
     score += 4;
   }

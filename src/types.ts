@@ -3,6 +3,7 @@ export type CaffeinePreference = 'yes' | 'no' | 'light caffeine';
 export type SweetnessPreference = 'none' | 'light' | 'medium' | 'sweet';
 export type FlavorPreference = 'chocolate' | 'fruity' | 'floral' | 'spicy' | 'creamy' | 'earthy' | 'surprise me';
 export type DrinkTemperature = 'hot' | 'iced' | 'either';
+export type WeatherVibe = 'sunny' | 'rainy' | 'cloudy' | 'cold' | 'warm' | 'any';
 
 export interface MoodFormAnswers {
   mood: string;
@@ -11,6 +12,7 @@ export interface MoodFormAnswers {
   sweetnessPreference: SweetnessPreference;
   flavorPreference: FlavorPreference;
   temperaturePreference: DrinkTemperature;
+  weatherVibe: WeatherVibe;
 }
 
 export interface Drink {

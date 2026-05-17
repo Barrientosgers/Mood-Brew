@@ -12,6 +12,7 @@ const defaultForm: MoodFormAnswers = {
   sweetnessPreference: 'light',
   flavorPreference: 'creamy',
   temperaturePreference: 'either',
+  weatherVibe: 'any',
 };
 
 const moodQuotes = [

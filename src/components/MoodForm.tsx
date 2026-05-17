@@ -1,4 +1,4 @@
-import type { CaffeinePreference, DrinkTemperature, EnergyLevel, FlavorPreference, MoodFormAnswers, SweetnessPreference } from '../types';
+import type { CaffeinePreference, DrinkTemperature, EnergyLevel, FlavorPreference, MoodFormAnswers, SweetnessPreference, WeatherVibe } from '../types';
 
 interface MoodFormProps {
   value: MoodFormAnswers;
@@ -13,6 +13,7 @@ const caffeineOptions: CaffeinePreference[] = ['yes', 'no', 'light caffeine'];
 const sweetnessOptions: SweetnessPreference[] = ['none', 'light', 'medium', 'sweet'];
 const flavorOptions: FlavorPreference[] = ['chocolate', 'fruity', 'floral', 'spicy', 'creamy', 'earthy', 'surprise me'];
 const temperatureOptions: DrinkTemperature[] = ['hot', 'iced', 'either'];
+const weatherOptions: WeatherVibe[] = ['sunny', 'rainy', 'cloudy', 'cold', 'warm', 'any'];
 
 function FieldLabel({ title, hint }: { title: string; hint: string }) {
   return (
@@ -114,6 +115,13 @@ export default function MoodForm({ value, onChange, onSubmit, onSurprise, isGene
           value={value.temperaturePreference}
           options={temperatureOptions}
           onChange={(nextValue) => onChange('temperaturePreference', nextValue)}
+        />
+        <SelectField
+          label="Weather vibe"
+          hint="Match your drink to the weather outside."
+          value={value.weatherVibe}
+          options={weatherOptions}
+          onChange={(nextValue) => onChange('weatherVibe', nextValue)}
         />
       </div>
 
